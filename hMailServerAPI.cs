@@ -23,12 +23,13 @@ namespace hMailAddAccount
 
 
         // Create new domain
-        private static void DomainCreate(string user, string pass, string domainName) {
+        private static bool DomainCreate(string user, string pass, string domainName) {
             hMailServer.Application hMailApp = Authenticate(user, pass);
             hMailServer.Domain domain = hMailApp.Domains.Add();
             domain.Name = domainName;
             domain.Active = true;
             domain.Save();
+            return true;
         }
 
         // Domain activation or deactivation
