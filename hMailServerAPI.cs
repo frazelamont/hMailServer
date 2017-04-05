@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using hMailServer;
 
+// https://www.codeproject.com/Articles/1101963/Tips-on-hMailServer-Manipulation-using-Csharp
+// Add reference to hMailserver Server COM Library
+
 namespace hMailAddAccount
 {
-    // https://www.codeproject.com/Articles/1101963/Tips-on-hMailServer-Manipulation-using-Csharp
-    // Add reference to hMailserver Server COM Library
-
     class Program
     {
         // Authenticate
@@ -20,7 +20,6 @@ namespace hMailAddAccount
                 hMailApp.Authenticate(userName, password);
             return hMailApp;
         }
-
 
         // Create new domain
         private static bool DomainCreate(string user, string pass, string domainName) {
@@ -61,11 +60,10 @@ namespace hMailAddAccount
             }
             myDomain.Delete();
             return true;
-        }
-        
+        }        
 
         // Create mailbox, Account: mailbox@domain.com
-        private static bool AccountCreate(string userName, string password, string domainName, string accountAddress, string accountPassword, bool accountActive = true, int maxSize = 0) {
+        private static bool AccountCreate(string userName, string password, string domainName, string accountAddress, string accountPassword, bool accountActive = true, int maxSize = 1000) {
             hMailServer.Application hMailApp = Authenticate(userName, password);
             hMailServer.Domain myDomain = hMailApp.Domains.ItemByName[domainName];
             if (myDomain != null)
@@ -75,11 +73,34 @@ namespace hMailAddAccount
                 account.Password = accountPassword;
                 account.Active = accountActive;
                 account.MaxSize = maxSize;
+                account.Active = true;
                 account.Save();
                 return true;
             }
             else
                 return false;
+        }
+
+        // Deactivate account
+        private static bool AccountDeactivate(string userName, string password, string domainName, string accountAddress, bool active = false)
+        {
+            hMailServer.Application hMailApp = Authenticate(userName, password);
+            hMailServer.Domain myDomain = hMailApp.Domains.ItemByName[domainName];
+            hMailServer.Account account = myDomain.Accounts.ItemByAddress[accountAddress];
+            account.Active = active;
+            account.Save();
+            return true;
+        }
+
+        // Deactivate account
+        private static bool AccountActivate(string userName, string password, string domainName, string accountAddress, bool active = true)
+        {
+            hMailServer.Application hMailApp = Authenticate(userName, password);
+            hMailServer.Domain myDomain = hMailApp.Domains.ItemByName[domainName];
+            hMailServer.Account account = myDomain.Accounts.ItemByAddress[accountAddress];
+            account.Active = active;
+            account.Save();
+            return true;
         }
 
         // Delete account mailbox
@@ -113,7 +134,7 @@ namespace hMailAddAccount
             hMailServer.Application hMailApp = Authenticate(userName, password);
             hMailServer.Domain myDomain = hMailApp.Domains.ItemByName[domainName];
             hMailServer.Account account = myDomain.Accounts.ItemByAddress[accountAddress];
-            account.Password = newPassword;
+            account.Password = newPassword;            
             myDomain.Save();
             return true;
         }
@@ -121,8 +142,7 @@ namespace hMailAddAccount
         static void Main(string[] args)
         {
             // Create new domain
-            DomainCreate("Administrator", "Pass", "zenek.xx");
-
+            DomainCreate("Administrator", "Password", "zenek.xx");
         }
     }
 }
