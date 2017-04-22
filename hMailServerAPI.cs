@@ -29,12 +29,16 @@ namespace hMailAddAccount
         // INSERT INTO `hm_accounts` (`accountid`, `accountdomainid`, `accountadminlevel`, `accountaddress`, `accountpassword`, `accountactive`, `accountisad`, `accountaddomain`, `accountadusername`, `accountmaxsize`, `accountvacationmessageon`, `accountvacationmessage`, `accountvacationsubject`, `accountpwencryption`, `accountforwardenabled`, `accountforwardaddress`, `accountforwardkeeporiginal`, `accountenablesignature`, `accountsignatureplaintext`, `accountsignaturehtml`, `accountlastlogontime`, `accountvacationexpires`, `accountvacationexpiredate`, `accountpersonfirstname`, `accountpersonlastname`) VALUES (NULL, '8', '0', 'info@breakermind.com', '09598b56eddb0b17ca5e9585d70e989f343dc58706fdfd95fceba397f18dd100f084b5', '1', '0', '', '', '0', '0', '', '', '3', '0', '', '0', '0', '', '', '2017-04-06 19:45:44', '0', '2017-04-03 00:00:00', '', '');
 
         private void GetAccounts(MySqlConnection conn){
+            
             conn.Open();
-            string query = "SELECT * FROM NewsletterAccounts";
+            string query = "SELECT * FROM NewsletterAccounts WHERE Name=@Name1";            
             
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
+            cmd.Parameters.AddWithValue("@Name1", "Michikolta");
+
             MySqlDataReader dataReader = cmd.ExecuteReader();
+            
             while (dataReader.Read())
             {
                 string account = dataReader["id"].ToString() + dataReader["name"] + dataReader["age"];
@@ -187,8 +191,17 @@ namespace hMailAddAccount
 
         static void Main(string[] args)
         {
-            // Create new domain
-            DomainCreate("Administrator", "xxxx", "xxxxx.xx");
+
+            try
+            {
+                // Create new domain
+                DomainCreate("Administrator", "xxxx", "xxxxx.xx");
+
+            }catch(Exception e){
+                Console.WriteLine(e.ToString());
+                Console.ReadKey();
+            }
+
         }
     }
 }
