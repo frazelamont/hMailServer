@@ -1,0 +1,6 @@
+RECORD TXT
+
+## generate from 
+https://www.socketlabs.com/domainkey-dkim-generation-wizard/
+or 
+http://dkimcore.org/tools/keys.html
