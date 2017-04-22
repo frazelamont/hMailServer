@@ -1,4 +1,6 @@
 RECORD TXT
+ SPF (Sender Policy Framework)
+ 
 mail.fxstar.eu
 "v=spf1 a mx ~all"
 or
