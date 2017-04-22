@@ -1,4 +1,5 @@
-RECORD TXT
+RECORD TXT 
+(Domain Keys Identified Mail)
 
 ## generate from 
 https://www.socketlabs.com/domainkey-dkim-generation-wizard/
