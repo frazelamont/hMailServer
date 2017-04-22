@@ -1,0 +1,9 @@
+RECORD TXT
+_dmarc
+_dmarc.fxstar.eu
+v=DMARC1; p=none; rua=mailto:catchall@fxstar.eu; ruf=mailto:catchall@fxstar.eu; fo=0; adkim=r; aspf=r; pct=100; rf=afrf; ri=86400; sp=none
+
+### Generators
+http://www.kitterman.com/dmarc/assistant.html
+https://www.unlocktheinbox.com/dmarcwizard/
+https://dmarc.org/resources/deployment-tools/
