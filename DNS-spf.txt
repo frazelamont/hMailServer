@@ -1,0 +1,9 @@
+RECORD TXT
+mail.fxstar.eu
+"v=spf1 a mx ~all"
+or
+"v=spf1 ip4:92.222.7.98 -all"
+or
+"v=spf1 ip4:fxstar.eu -all"
+or
+"v=spf1 include:mx.fxstar.eu ~all"
