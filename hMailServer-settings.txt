@@ -1,0 +1,28 @@
+1# download hMailServer
+https://www.hmailserver.com/download
+
+2# SSL generator self-signed (if you need commercal free ssl)
+http://www.selfsignedcertificate.com/
+
+# OR 100% FREE commercial ssl/tls
+https://www.startssl.com/ or use https://sslforfree.com
+
+3# Create DNS MX records
+
+4# DKIM generator
+https://www.socketlabs.com/domainkey-dkim-generation-wizard/
+# OR
+http://dkimcore.org/tools/
+
+5# Create DMARC record
+http://www.kitterman.com/dmarc/assistant.html
+
+6# Create SPV record
+http://marcinmazurek.com.pl/generator-rekordow-spf-dns
+
+7# Setup DNS records or DNS
+https://www.youtube.com/watch?v=jQnl_EF0FpY&list=PLTaMyH9_n-uq4oNQ95IkJg-Rix_-6Y6x8
+or Setup Windows server DNS
+https://www.youtube.com/watch?v=-5_KGCH1nzY&t=311s
+
+BYE!!!
