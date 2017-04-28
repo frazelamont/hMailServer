@@ -54,6 +54,9 @@ if (file_exists("C:\Program Files (x86)\hMailServer\Logs\hmailserver_awstats.log
 	echo "Empty logs";
 }
 
+// remove empty lines
+$res = $db->query("DELETE FROM awstats WHERE a1 = ''");
+
 /*
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
