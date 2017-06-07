@@ -9,10 +9,10 @@ How to run hmailserver admin panel from iis on windows server 2012 https://www.h
 In PhpWebAdmin create a copy of the file named config-dist.php and give it the name config.php.
 
 ### Add to php.ini
-[COM]
+[COM] <br>
 com.allow_dcom = true
 
-[ExtensionList]
+[ExtensionList] <br>
 extension=php_com_dotnet.dll
 
 ### Run DCOM in windows server
