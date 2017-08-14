@@ -1,8 +1,14 @@
-From: from@ccc.cc
-To: to@@ccc.cc
-Subject: Example Email
+Return-Path: <mix@cccx.cc>
+To: Mique <max@cccx.cc>
+Subject: HTML message subject content
+From: Jimo <mix@cccx.cc>
+Reply-To: Jimo <mix@cccx.cc>
+Sender: mix@cccx.cc
+X-Mailer: http://www.domain.com $Revision: 1.63 $ (mail)
 MIME-Version: 1.0
 Content-Type: multipart/mixed; boundary="MixedBoundaryString"
+Message-ID: <20050430192829.0489.mix@cccx.xx>
+Date: Sat, 30 Apr 2017 15:55:55 -0900
 
 --MixedBoundaryString
 Content-Type: multipart/related; boundary="RelatedBoundaryString"
@@ -22,7 +28,7 @@ Content-Transfer-Encoding: quoted-printable
 
 <html>
   <body>=0D
-    <img src=3D=22cid:masthead.png=40ccc.cc=22 width 800 height=3D80=
+    <img src=3D=22cid:masthead.png=40cccx.cc=22 width 800 height=3D80=
  =5C>=0D
     <p>This is the html part of the email.</p>=0D
     <img src=3D=22cid:logo.png=40ccc.cc=22 width 200 height=3D60 =5C=
@@ -36,7 +42,7 @@ Content-Transfer-Encoding: quoted-printable
 Content-Type: image/jpgeg;name="logo.png"
 Content-Transfer-Encoding: base64
 Content-Disposition: inline;filename="logo.png"
-Content-ID: <logo.png@ccc.cc>
+Content-ID: <logo.png@cccx.cc>
 
 amtsb2hiaXVvbHJueXZzNXQ2XHVmdGd5d2VoYmFmaGpremxidTh2b2hydHVqd255aHVpbnRyZnhu
 dWkgb2l1b3NydGhpdXRvZ2hqdWlyb2h5dWd0aXJlaHN1aWhndXNpaHhidnVqZmtkeG5qaG5iZ3Vy
@@ -49,7 +55,7 @@ LGZ2cDBbZWRzcm85eWo1Zmtsc2xrZ3g=
 Content-Type: image/jpgeg;name="masthead.png"
 Content-Transfer-Encoding: base64
 Content-Disposition: inline;filename="masthead.png"
-Content-ID: <masthead.png@ccc.cc>
+Content-ID: <masthead.png@cccx.cc>
 
 aXR4ZGh5Yjd1OHk3MzQ4eXFndzhpYW9wO2tibHB6c2tqOTgwNXE0aW9qYWJ6aXBqOTBpcjl2MC1t
 dGlmOTA0cW05dGkwbWk0OXQwYVttaXZvcnBhXGtsbGo7emt2c2pkZnI7Z2lwb2F1amdpNTh1NDlh
